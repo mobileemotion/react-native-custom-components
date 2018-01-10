@@ -34,7 +34,7 @@ import {
   View,
   ViewPropTypes,
 } from 'react-native';
-var PropTypes = require('prop-types');
+import PropTypes from 'prop-types';
 
 var guid = require('./guid');
 
