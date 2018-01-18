@@ -1,3 +1,11 @@
+'use strict';
+
+import {
+  Platform,
+  StyleSheet,
+  View,
+} from 'react-native';
+
 /**
  * Copyright (c) 2015, Facebook, Inc.  All rights reserved.
  *
@@ -23,13 +31,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-'use strict';
+import PropTypes from 'prop-types';
 
-import {
-  Platform,
-  StyleSheet,
-  View,
-} from 'react-native';
 import React from 'react';
 
 const NavigatorBreadcrumbNavigationBarStyles = require('./NavigatorBreadcrumbNavigationBarStyles');
@@ -44,7 +47,6 @@ const { Map } = require('immutable');
 const Interpolators = NavigatorBreadcrumbNavigationBarStyles.Interpolators;
 const NavigatorNavigationBarStyles = Platform.OS === 'android' ?
   NavigatorNavigationBarStylesAndroid : NavigatorNavigationBarStylesIOS;
-const PropTypes = React.PropTypes;
 
 /**
  * Reusable props objects.
@@ -92,9 +94,9 @@ class NavigatorBreadcrumbNavigationBar extends React.Component {
       titleContentForRoute: PropTypes.func,
       iconForRoute: PropTypes.func,
     }),
-    navState: React.PropTypes.shape({
-      routeStack: React.PropTypes.arrayOf(React.PropTypes.object),
-      presentedIndex: React.PropTypes.number,
+    navState: PropTypes.shape({
+      routeStack: PropTypes.arrayOf(PropTypes.object),
+      presentedIndex: PropTypes.number,
     }),
     style: View.propTypes.style,
   };

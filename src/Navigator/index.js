@@ -1,3 +1,7 @@
+'use strict';
+
+var buildStyleInterpolator = require('./buildStyleInterpolator');
+
 /**
  * Copyright (c) 2015, Facebook, Inc.  All rights reserved.
  *
@@ -23,10 +27,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
- /* eslint-disable no-extra-boolean-cast*/
-'use strict';
-
-var buildStyleInterpolator = require('./buildStyleInterpolator');
+/* eslint-disable no-extra-boolean-cast*/
+import PropTypes from 'prop-types';
 
 import {
   Dimensions,
@@ -52,8 +54,6 @@ var invariant = require('fbjs/lib/invariant');
 var rebound = require('rebound');
 
 var flattenStyle = require('./flattenStyle');
-
-var PropTypes = React.PropTypes;
 
 // TODO: this is not ideal because there is no guarantee that the navigator
 // is full screen, however we don't have a good way to measure the actual
