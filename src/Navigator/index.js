@@ -38,6 +38,7 @@ import {
   StyleSheet,
   TVEventHandler,
   View,
+  ViewPropTypes
 } from 'react-native';
 
 var AnimationsDebugModule = NativeModules.AnimationsDebugModule;
@@ -394,7 +395,7 @@ var Navigator = createReactClass({
     /**
      * Styles to apply to the container of each scene.
      */
-    sceneStyle: View.propTypes.style,
+    sceneStyle: ViewPropTypes.style
   },
 
   statics: {

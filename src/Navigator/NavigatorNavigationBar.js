@@ -34,7 +34,7 @@ import PropTypes from 'prop-types';
 import {
   Platform,
   StyleSheet,
-  View,
+  ViewViewPropTypes
 } from 'react-native';
 
 var guid = require('./guid');
@@ -67,7 +67,7 @@ class NavigatorNavigationBar extends React.Component {
       presentedIndex: PropTypes.number,
     }),
     navigationStyles: PropTypes.object,
-    style: View.propTypes.style,
+    style: ViewPropTypes.style,
   };
 
   static Styles = NavigatorNavigationBarStyles;
