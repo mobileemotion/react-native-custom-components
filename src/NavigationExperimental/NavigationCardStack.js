@@ -200,7 +200,7 @@ class NavigationCardStack extends React.Component<DefaultProps, Props, void> {
     /**
      * Custom style applied to the cards stack.
      */
-    style: VViewPropTypes.style,
+    style: ViewPropTypes.style,
 
     /**
      * Custom style applied to the scenes stack.
