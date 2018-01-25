@@ -34,7 +34,7 @@ import PropTypes from 'prop-types';
 import {
   Platform,
   StyleSheet,
-  ViewViewPropTypes
+  ViewPropTypes
 } from 'react-native';
 
 var guid = require('./guid');
