@@ -1,5 +1,10 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.  All rights reserved.
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
  *
  * Facebook, Inc. ("Facebook") owns all right, title and interest, including
  * all intellectual property and other proprietary rights, in and to the React
@@ -24,12 +29,55 @@
  *
  * @flow
  */
+'use strict';
 
+const PropTypes = require('prop-types');
 
-const NavigationExperimental = require('./NavigationExperimental');
-const Navigator = require('./Navigator');
+const React = require('react');
+const ReactNative = require('react-native');
 
-module.exports = {
-  NavigationExperimental,
-  Navigator,
+const {
+  Platform,
+  StyleSheet,
+  View,
+  Text,
+  ViewPropTypes
+} = ReactNative;
+
+type Props = {
+  children?: React.Element<any>,
+  style?: any,
+  textStyle?: any,
+  viewProps?: any,
+}
+
+const NavigationHeaderTitle = ({ children, style, textStyle, viewProps }: Props) => (
+  <View style={[ styles.title, style ]} {...viewProps}>
+    <Text style={[ styles.titleText, textStyle ]}>{children}</Text>
+  </View>
+);
+
+const styles = StyleSheet.create({
+  title: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 16
+  },
+
+  titleText: {
+    flex: 1,
+    fontSize: 18,
+    fontWeight: '500',
+    color: 'rgba(0, 0, 0, .9)',
+    textAlign: Platform.OS === 'ios' ? 'center' : 'left'
+  }
+});
+
+NavigationHeaderTitle.propTypes = {
+  children: PropTypes.node.isRequired,
+  style: ViewPropTypes.style,
+  textStyle: Text.propTypes.style
 };
+
+module.exports = NavigationHeaderTitle;

@@ -1,3 +1,7 @@
+'use strict';
+
+var buildStyleInterpolator = require('./buildStyleInterpolator');
+
 /**
  * Copyright (c) 2015, Facebook, Inc.  All rights reserved.
  *
@@ -23,10 +27,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
- /* eslint-disable no-extra-boolean-cast*/
-'use strict';
-
-var buildStyleInterpolator = require('./buildStyleInterpolator');
+/* eslint-disable no-extra-boolean-cast*/
 
 import {
   Dimensions,
@@ -35,7 +36,7 @@ import {
   StyleSheet,
   TVEventHandler,
   View,
-  ViewPropTypes,
+  ViewPropTypes
 } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -46,16 +47,16 @@ var NavigatorBreadcrumbNavigationBar = require('./NavigatorBreadcrumbNavigationB
 var NavigatorNavigationBar = require('./NavigatorNavigationBar');
 var NavigatorSceneConfigs = require('./NavigatorSceneConfigs');
 var React = require('react');
+var createReactClass = require('create-react-class');
 var Subscribable = require('./Subscribable');
 var TimerMixin = require('react-timer-mixin');
 
 var createReactClass = require('create-react-class');
-var clamp = require('./clamp');
+var clamp = require('clamp');
 var invariant = require('fbjs/lib/invariant');
 var rebound = require('rebound');
 
 var flattenStyle = require('./flattenStyle');
-
 
 // TODO: this is not ideal because there is no guarantee that the navigator
 // is full screen, however we don't have a good way to measure the actual
@@ -300,6 +301,7 @@ var GESTURE_ACTIONS = [
  * available [scene config options](docs/navigator.html#configurescene).
  */
 var Navigator = createReactClass({
+  displayName: 'Navigator',
 
   propTypes: {
     /**
@@ -393,7 +395,7 @@ var Navigator = createReactClass({
     /**
      * Styles to apply to the container of each scene.
      */
-    sceneStyle: ViewPropTypes.style,
+    sceneStyle: ViewPropTypes.style
   },
 
   statics: {
@@ -1373,7 +1375,7 @@ var Navigator = createReactClass({
       this._navigationContext = new NavigationContext();
     }
     return this._navigationContext;
-  }
+  },
 });
 
 module.exports = Navigator;

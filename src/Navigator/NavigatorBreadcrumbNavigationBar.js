@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Copyright (c) 2015, Facebook, Inc.  All rights reserved.
  *
@@ -23,13 +25,13 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-'use strict';
+import PropTypes from 'prop-types';
 
 import {
   Platform,
   StyleSheet,
   View,
-  ViewPropTypes,
+  ViewPropTypes
 } from 'react-native';
 import React from 'react';
 
@@ -97,7 +99,7 @@ class NavigatorBreadcrumbNavigationBar extends React.Component {
       routeStack: PropTypes.arrayOf(PropTypes.object),
       presentedIndex: PropTypes.number,
     }),
-    style: ViewPropTypes.style,
+    style: ViewPropTypes.style
   };
 
   static Styles = NavigatorBreadcrumbNavigationBarStyles;

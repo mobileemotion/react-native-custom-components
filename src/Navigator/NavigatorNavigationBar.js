@@ -24,16 +24,17 @@
  *
  */
 'use strict';
-
 var React = require('react');
 var NavigatorNavigationBarStylesAndroid = require('./NavigatorNavigationBarStylesAndroid');
 var NavigatorNavigationBarStylesIOS = require('./NavigatorNavigationBarStylesIOS');
+
 import {
   Platform,
   StyleSheet,
   View,
   ViewPropTypes,
 } from 'react-native';
+
 import PropTypes from 'prop-types';
 
 var guid = require('./guid');
